@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innoventum - Matchmaking Platform</title>
+    <link rel="stylesheet" href="ie.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Main Navigation -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <div class="nav-logo">
+                <img src="logo.png" alt="Innoventum">
+            </div>
+            <div class="nav-links">
+                <a href="/dashboard"><i class="fas fa-home"></i> Home</a>
+                <a href="/investors"><i class="fas fa-chart-line"></i> Investors</a>
+                <a href="/entrepreneurs"><i class="fas fa-rocket"></i> Entrepreneurs</a>
+                <a href="/matchmaking" class="active"><i class="fas fa-handshake"></i> Matchmaking</a>
+                <a href="/about"><i class="fas fa-info-circle"></i> About</a>
+                <a href="/support"><i class="fas fa-headset"></i> Support</a>
+            </div>
+        </div>
+        <div class="nav-right">
+            <div class="notifications">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge">3</span>
+            </div>
+            <div class="messages">
+                <i class="fas fa-envelope"></i>
+                <span class="message-badge">5</span>
+            </div>
+            <div class="profile-dropdown">
+                <img src="default-avatar.png" alt="Profile" class="avatar">
+                <div class="dropdown-content">
+                    <a href="/profile"><i class="fas fa-user"></i> My Profile</a>
+                    <a href="/settings"><i class="fas fa-cog"></i> Settings</a>
+                    <a href="/logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="page-header">
+        <h1>Investor-Entrepreneur Matchmaking</h1>
+        <p>Connect with the perfect match for your startup journey</p>
+        <div class="global-search">
+            <input type="text" placeholder="Search by name, industry, or location...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Filters Sidebar -->
+        <aside class="filters-sidebar">
+            <div class="filters-header">
+                <h2>Advanced Filters</h2>
+                <button id="clearFilters">Clear All</button>
+            </div>
+
+            <form id="filterForm">
+                <div class="filter-section">
+                    <label>Industry</label>
+                    <select id="industryFilter" multiple>
+                        <option value="tech">Technology</option>
+                        <option value="health">Healthcare</option>
+                        <option value="finance">Fintech</option>
+                        <option value="edu">Education</option>
+                        <option value="retail">Retail</option>
+                        <option value="energy">Clean Energy</option>
+                    </select>
+                </div>
+
+                <div class="filter-section">
+                    <label>Funding Range</label>
+                    <div class="range-slider">
+                        <input type="range" id="fundingSlider" min="0" max="1000000" step="50000">
+                        <div class="range-values">
+                            <span id="minValue">$0</span>
+                            <span id="maxValue">$1M</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <label>Location</label>
+                    <select id="locationFilter">
+                        <option value="">All Locations</option>
+                        <option value="sf">San Francisco</option>
+                        <option value="ny">New York</option>
+                        <option value="ld">London</option>
+                    </select>
+                </div>
+
+                <div class="filter-section">
+                    <label>Project Stage</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" value="idea"> Idea Stage</label>
+                        <label><input type="checkbox" value="mvp"> MVP</label>
+                        <label><input type="checkbox" value="early"> Early Traction</label>
+                        <label><input type="checkbox" value="growth"> Growth</label>
+                        <label><input type="checkbox" value="scaling"> Scaling</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="apply-filters">Apply Filters</button>
+            </form>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content-area">
+            <!-- Recommended Matches Section -->
+            <section class="recommended-matches">
+                <div class="section-header">
+                    <h2>Recommended Matches</h2>
+                    <div class="view-controls">
+                        <button class="view-toggle active" data-view="grid">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-toggle" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                        <select class="sort-by">
+                            <option value="match">Best Match</option>
+                            <option value="recent">Most Recent</option>
+                            <option value="funding">Funding Amount</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="matches-grid" id="matchesContainer">
+                    <!-- Match cards will be dynamically inserted here -->
+                </div>
+            </section>
+
+            <!-- Funding Insights Section -->
+            <section class="funding-insights">
+                <h2>Funding Insights</h2>
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <h3>Average Funding</h3>
+                        <p class="stat">$250K</p>
+                        <p class="trend">↑ 15% from last month</p>
+                    </div>
+                    <div class="insight-card">
+                        <h3>Active Investors</h3>
+                        <p class="stat">1,234</p>
+                        <p class="trend">↑ 8% new investors</p>
+                    </div>
+                    <div class="insight-card">
+                        <h3>Success Rate</h3>
+                        <p class="stat">75%</p>
+                        <p class="trend">↑ 5% this quarter</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Match Card Template -->
+    <template id="matchCardTemplate">
+        <div class="match-card">
+            <div class="match-header">
+                <img src="" alt="Profile" class="match-avatar">
+                <div class="match-score">
+                    <span class="score-label">Match</span>
+                    <span class="score-value"></span>
+                </div>
+            </div>
+            <div class="match-info">
+                <h3 class="match-name"></h3>
+                <p class="match-industry"></p>
+                <div class="match-details">
+                    <span class="location"></span>
+                    <span class="funding"></span>
+                    <span class="stage"></span>
+                </div>
+                <p class="match-description"></p>
+                <div class="match-tags"></div>
+            </div>
+            <div class="match-actions">
+                <button class="primary-btn connect-btn">
+                    <i class="fas fa-handshake"></i> Connect
+                </button>
+                <button class="secondary-btn save-btn">
+                    <i class="far fa-bookmark"></i>
+                </button>
+                <button class="secondary-btn more-btn">
+                    <i class="fas fa-ellipsis-h"></i>
+                </button>
+            </div>
+        </div>
+    </template>
+
+    <script src="ie.js"></script>
+</body>
+</html> 
