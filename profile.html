@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | Innoventum</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="/">
+                <img src="logo.png" alt="Innoventum" class="logo-img">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="/dashboard">Dashboard</a>
+            <a href="/matchmaking">Matchmaking</a>
+            <a href="/messages">Messages</a>
+            <div class="notifications">
+                <i class="fas fa-bell"></i>
+                <span class="badge">3</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="profile-container">
+        <!-- Profile Header -->
+        <header class="profile-header">
+            <div class="cover-photo"></div>
+            <div class="profile-info">
+                <div class="profile-photo">
+                    <img src="assets/images/default-avatar.png" alt="Profile Photo">
+                    <button class="edit-photo" title="Change Photo">
+                        <i class="fas fa-camera"></i>
+                    </button>
+                </div>
+                <div class="profile-text">
+                    <h1>TechVentures Capital</h1>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Andhra Pradesh, India</p>
+                    <div class="profile-tags">
+                        <span class="tag">Tech</span>
+                        <span class="tag">Healthcare</span>
+                        <span class="tag">AI/ML</span>
+                    </div>
+                </div>
+                <div class="profile-actions">
+                    <button class="primary-btn">
+                        <i class="fas fa-paper-plane"></i> Connect
+                    </button>
+                    <button class="secondary-btn">
+                        <i class="far fa-bookmark"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="profile-content">
+            <div class="profile-main">
+                <!-- Overview Section -->
+                <section class="profile-section">
+                    <h2>Overview</h2>
+                    <p class="overview-text">
+                        Leading venture capital firm focused on early-stage technology startups. 
+                        We invest in innovative solutions across healthcare, AI, and sustainable technology.
+                    </p>
+                </section>
+
+                <!-- Investment Details -->
+                <section class="profile-section">
+                    <h2>Investment Details</h2>
+                    <div class="investment-grid">
+                        <div class="investment-item">
+                            <h3>Investment Range</h3>
+                            <p>$500K - $2M</p>
+                        </div>
+                        <div class="investment-item">
+                            <h3>Stage Focus</h3>
+                            <p>Seed to Series A</p>
+                        </div>
+                        <div class="investment-item">
+                            <h3>Portfolio Size</h3>
+                            <p>25+ Companies</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Portfolio Section -->
+                <section class="profile-section">
+                    <h2>Portfolio Companies</h2>
+                    <div class="portfolio-grid">
+                        <!-- Portfolio items will be dynamically added here by JavaScript -->
+                    </div>
+                </section>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="profile-sidebar">
+                <!-- Quick Stats -->
+                <div class="sidebar-section">
+                    <h3>Quick Stats</h3>
+                    <ul class="stats-list">
+                        <li>
+                            <span class="stat-label">Investments Made</span>
+                            <span class="stat-value">32</span>
+                        </li>
+                        <li>
+                            <span class="stat-label">Average Investment</span>
+                            <span class="stat-value">$750K</span>
+                        </li>
+                        <li>
+                            <span class="stat-label">Success Rate</span>
+                            <span class="stat-value">85%</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="sidebar-section">
+                    <h3>Contact Information</h3>
+                    <ul class="contact-list">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:contact@techventures.com">contact@techventures.com</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-globe"></i>
+                            <a href="https://techventures.com" target="_blank">techventures.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Social Links -->
+                <div class="sidebar-section">
+                    <h3>Social Media</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link linkedin">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link angellist">
+                            <i class="fab fa-angellist"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Documents -->
+                <div class="sidebar-section">
+                    <h3>Documents</h3>
+                    <ul class="document-list">
+                        <li>
+                            <i class="fas fa-file-pdf"></i>
+                            <span>Investment Thesis</span>
+                            <a href="#" class="download-btn">
+                                <i class="fas fa-download"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <i class="fas fa-file-powerpoint"></i>
+                            <span>Portfolio Overview</span>
+                            <a href="#" class="download-btn">
+                                <i class="fas fa-download"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal" id="connectModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Connect with TechVentures Capital</h2>
+            <form id="connectForm">
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="4" placeholder="Introduce yourself and your startup..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="pitch">Pitch Deck (Optional)</label>
+                    <input type="file" id="pitch" accept=".pdf,.ppt,.pptx">
+                </div>
+                <button type="submit" class="primary-btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="profile.js"></script>
+</body>
+</html> 
