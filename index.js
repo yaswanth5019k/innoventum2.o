@@ -94,17 +94,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Add your authentication logic here
-        // Example:
-        // authenticateUser(email, password, remember)
-        //     .then(response => {
-        //         if (response.success) {
-        //             window.location.href = '/dashboard';
-        //         }
-        //     })
-        //     .catch(error => {
-        //         alert(error.message);
-        //     });
     });
 
     // Social login handlers
@@ -130,4 +119,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Check for LinkedIn callback
     handleLinkedInCallback();
-}); 
+});
+
+function openStartUp(){
+    window.location.href = "profile.html";
+}
+
+function openInvestor(){
+    window.location.href = "ie.html";
+}

@@ -43,19 +43,21 @@ body {
     z-index: 1000;
 }
 
-.nav-left, .nav-right {
+.nav-right {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
-.nav-logo img {
-    height: 40px;
+.nav-logo  {
+    color: #0C0C0C;
+  font-family: Poppins;
+  font-size: 25px;
+  margin-right: 35px;
 }
 
 .nav-links {
     display: flex;
-    gap: 1.5rem;
 }
 
 .nav-links a {
@@ -70,7 +72,7 @@ body {
 }
 
 .nav-links a:hover {
-    background-color: var(--background-color);
+    background-color: rgb(168, 168, 168);
 }
 
 .nav-links a.active {
@@ -80,8 +82,8 @@ body {
 
 /* Header Section */
 .page-header {
-    margin-top: 80px;
-    padding: 2rem;
+    margin-top: 70px;
+    padding: 2rem 2rem 1rem 2rem;
     text-align: center;
     background: var(--card-background);
     border-bottom: 1px solid var(--border-color);
@@ -89,7 +91,7 @@ body {
 
 .global-search {
     max-width: 600px;
-    margin: 1.5rem auto;
+    margin: .5rem auto;
     position: relative;
 }
 
@@ -292,6 +294,84 @@ body {
     font-size: 0.875rem;
 }
 
+.projects {
+    display: inline-flex;
+    align-items: center;
+    gap: 35px;
+    overflow: scroll;
+    margin-top: 15px;
+    width: 100%;
+  }
+
+.project {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 25px;
+    border: 1.5px solid #E6E9EE;
+    width: 320px;
+  }
+  
+  .project img {
+    width: 280px;
+    height: 175px;
+    border-radius: 15px;
+    gap: 20px;
+  }
+  
+  .project .project-title {
+    color: #0C0C0C;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 500;
+    gap: 20px;
+  }
+  
+  .project .project-discription {
+    color: rgba(12, 12, 12, 0.50);
+    font-family: Inter;
+    font-size: 15px;
+    font-weight: 500;
+    gap: 20px;
+    
+  }
+  
+  .related {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .related .topic {
+    display: flex;
+    height: 42px;
+    width: 450px;
+    padding: 10px 30px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 37px;
+    border: 1.5px solid #E6E9EE;
+    background: #FFF;
+  }
+  
+  .related .topic p {
+    color: rgba(12, 12, 12, 0.50);
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  .txt {
+    justify-content: space-around;
+  }
+
+  .recently-viewed{
+    padding: 0 20px;
+  margin-bottom: 100
+  }
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .main-container {
@@ -312,3 +392,22 @@ body {
         grid-template-columns: 1fr;
     }
 } 
+
+.logo-img {
+    height: 20px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.avatar{
+    height: 30px;
+    width: 30px;
+    border-radius: 100px;
+}
+
