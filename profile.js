@@ -127,7 +127,7 @@ function initializePortfolio() {
         {
             name: "HealthTech Solutions",
             description: "AI-powered healthcare diagnostics",
-            image: "healthtech.jpg",
+            image: "healthTech.jpg",
             year: 2022
         },
         {
